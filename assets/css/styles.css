@@ -61,11 +61,11 @@
   margin: 0;
 }
 
-html {
+html{
   scroll-behavior: smooth;
 }
 
-body {
+body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--first-color);
@@ -211,7 +211,7 @@ header {
 /* Shadow header */
 .shadow-header {
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, .15);
-  background-color: red;
+  /* background-color: red; */
 }
 
 /* Active link */
@@ -264,6 +264,7 @@ header {
 
 .home__circle {
   width: 320px;
+  height: 320px;
   background-color: var(--first-color-darken);
   border-radius: 50%;
   box-shadow: inset var(--shadow-circle);
@@ -301,12 +302,12 @@ header {
   left: -.5rem;
 }
 
-.home__strwberry-1 {
+.home__strawberry-1 {
   top: 5.5rem;
   right: -1.5rem;
 }
 
-.home__strwberry-2 {
+.home__strawberry-2 {
   left: 3.5rem;
   bottom: -1.5rem;
 }
@@ -335,9 +336,81 @@ header {
 }
 
 /*~~~~~~~~~~~~~~~ FAVORITES ~~~~~~~~~~~~~~~*/
+.favorites__container{
+  row-gap: 3rem;
+  grid-template-columns: 100%;
+  padding-bottom: 3rem;
+}
+
+.favorites__data{
+  position: relative;
+  text-align: center;
+}
+
+.favorites__cup-cake-1,
+.favorites__cup-cake-2{
+  width: 40px;
+  position: absolute;
+  opacity: .7;
+}
+
+.favorites__cup-cake-1 {
+  top: 2rem;
+  right: -1rem;
+  rotate: -15deg;
+}
+
+.favorites__cup-cake-2 {
+  bottom: -2rem;
+  left: -.75rem;
+  transform: scaleX(-1) rotate(45deg);
+}
+
+.favorites__article {
+  position: relative;
+  width: 200px;
+}
+
+.favorites__img {
+  width: 200px;
+  scale: .8;
+  transition: scale .4s, filter .4s;
+}
+
+.favorites__cherry-3,
+.favorites__cherry-4 {
+  width: 50px;
+  position: absolute;
+  filter: var(--shadow-img);
+  scale: 0;
+  transition: scale .4s .1s;
+}
+
+.favorites__cherry-3 {
+  top: 0;
+  right: -.5rem;
+}
+
+.favorites__cherry-4 {
+  bottom: -1rem;
+  left: -.5rem;
+}
 
 /* Swiper class */
+.swiper {
+  margin-inline: initial;
+  overflow: visible;
+}
 
+:is(.swiper-slide-active, .swiper-slide-duplicate-active) .favorites__img {
+  scale: 1;
+  filter: var(--shadow-img);
+}
+
+:is(.swiper-slide-active, .swiper-slide-duplicate-active) .favorites__cherry-3,
+:is(.swiper-slide-active, .swiper-slide-duplicate-active) .favorites__cherry-4 {
+  scale: 1;
+}
 
 /*~~~~~~~~~~~~~~~ CARE ~~~~~~~~~~~~~~~*/
 
